@@ -21,6 +21,7 @@ def findcd(speedbow,speedtarget,weight,target):
         print(cdtestfinalparams[0])
         if -0.000000001 < (cdtestfinalparams[0] - speedtarget) < 0.000000001:
             cdmatch = True
+            print(testcd)
             return testcd
         else:
             if mode*(cdtestfinalparams[0] - speedtarget) < 0:
@@ -45,5 +46,5 @@ cd = findcd(speedbow,speedtarget,weight1,target)
 finalparams1 = flightsim(speedbow,weight1,cd,target)
 finalparams2 = flightsim(speed2,weight2,cd,target)
 
-print("arrow 1: " + str(finalparams1[1]) + "s to target")
-print("arrow 2: " + str(finalparams2[1]) + "s to target")
+print("arrow 1: " + str(finalparams1[1]) + "s to target, terminal hit velocity " + str(3.2808398950131*finalparams1[0]) + "fps")
+print("arrow 2: " + str(finalparams2[1]) + "s to target, terminal hit velocity " + str(3.2808398950131*finalparams2[0]) + "fps")
